@@ -1,13 +1,14 @@
+import 'dotenv/config';
 import { Client, GatewayIntentBits, Partials } from 'discord.js';
 
 const client = new Client({ 
     intents: [
         GatewayIntentBits.Guilds,
         GatewayIntentBits.GuildMessages,
-        GatewayIntentBits.MessageContent, // Required to read text
-        GatewayIntentBits.DirectMessages, // Required to receive DMs
+        GatewayIntentBits.MessageContent, 
+        GatewayIntentBits.DirectMessages,
     ],
-    partials: [Partials.Channel], // Required for DMs to work consistently
+    partials: [Partials.Channel],
     rest: { timeout: 60000 }
 });
 
@@ -19,7 +20,7 @@ client.on("interactionCreate", async (interaction) => {
     if (!interaction.isChatInputCommand()) return;
 
     if (interaction.commandName === "ping") {
-        console.log(interaction); // Logs the full interaction object as seen in your screenshot
+        console.log(interaction);
         await interaction.reply("Pong!!");
     }
 });
@@ -32,4 +33,4 @@ client.on("messageCreate", (message) => {
 });
 
 // Use your token
-client.login("MTQ2MTQxOTg5OTYxMTI1MDY4OQ.GBNVty.FuQoNPb6M7-ZpVEdZaWQHwiej1wYIe2nk-oTPM");
+client.login(process.env.TOKEN);
