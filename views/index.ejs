@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YashChauhanBot.01 | Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #0f172a; color: white; }
+        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+
+    <div class="glass p-10 rounded-2xl shadow-2xl text-center max-w-md border border-white/10">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Bot Logo" class="w-24 h-24 mx-auto mb-6">
+        
+        <h1 class="text-4xl font-extrabold mb-2 bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
+            YashChauhanBot.01
+        </h1>
+        
+        <p class="text-gray-400 mb-8">
+            The next-generation bot for your community, developed at MNNIT Allahabad.
+        </p>
+
+        <a href="<%= inviteLink %>" 
+           class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+            Add to Discord
+        </a>
+
+        <div class="mt-8 pt-6 border-t border-white/5 text-xs text-gray-500">
+            &copy; 2026 Yash Chauhan | Built with Node.js & EJS
+        </div>
+    </div>
+
+</body>
+</html>

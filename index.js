@@ -1,5 +1,26 @@
 import 'dotenv/config';
 import { Client, GatewayIntentBits, Partials } from 'discord.js';
+import express from "express"
+import path from "path";
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+let app=express();
+const PORT=process.env.PORT||3000;
+
+app.set('views', path.join(__dirname, 'views')); 
+app.set('view engine', 'ejs');
+
+app.get('/', (req, res) => {
+    const inviteLink = `https://discord.com/api/oauth2/authorize?client_id=${process.env.CLIENT_ID}&permissions=8&scope=bot%20applications.commands`;
+    res.render('index', { inviteLink });
+});
+
+app.listen(PORT,()=>{
+    console.log(`Server is running at Port : ${PORT}`);
+});
 
 const client = new Client({ 
     intents: [
